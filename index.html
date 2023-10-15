@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+  <link href="prism.css" rel="stylesheet" />
+  <script src="prism.js"></script>
+  <script src="script.js"></script>
+
+</head>
+<body>
+  <h1>Tower of Hanoi Visualizer</h1>
+  <div class="towers">
+
+  <div class="tower" id="towerA"> </div>
+  <div class="tower" id="towerB"> </div>
+  <div class="tower" id="towerC"> </div>
+  
+  </div>
+
+  <div class="solveButton">
+    <button id="solver">Solve!</button>
+  </div>
+
+<div class="solvers"> 
+  <div class="solver">
+    <input type="text" id="diskCount" onfocus="this.value=''">
+    <button id="spawner">Spawn Disks!</button>
+  </div>
+  <div class="solver">
+    <input type="text" id="delayCount" onfocus="this.value=''">
+    <button id="delay">Set Delay!</button>
+  </div>
+</div>
+
+<pre class="snippet-code">
+  <code class="language-js">function towerOfHanoi(diskCount, source, auxiliary, target) {
+  if (diskCount == 0) 
+    return;
+  towerOfHanoi(diskCount - 1, source, target, auxiliary);
+  moveDisk(source, target);
+  towerOfHanoi(diskCount - 1, auxiliary, source, target);}</code>
+</pre>
+
+
+  </body>
+</html>
